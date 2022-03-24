@@ -13,8 +13,12 @@ from qlib.tests.config import CSI300_BENCH, CSI300_GBDT_TASK
 if __name__ == "__main__":
 
     # use default data
-    provider_uri = "~/Desktop/sourcecode/qlib_data/cn_data"  # target_dir
+    provider_uri = "~/Desktop/sourcecode/qlib_example/qlib_data/cn_data"  # target_dir
+
+    # 下载历史数据（分钟和天级别）
     GetData().qlib_data(target_dir=provider_uri, region=REG_CN, exists_skip=True)
+
+
     qlib.init(provider_uri=provider_uri, region=REG_CN)
 
     model = init_instance_by_config(CSI300_GBDT_TASK["model"])
